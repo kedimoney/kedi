@@ -2,16 +2,8 @@
   "name": "kedi-marketplace",
   "version": "1.0.0",
   "description": "KEDI Marketplace - Connecting Rwandan farmers with buyers",
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
-    "build": "npm run build --workspace=frontend",
-    "start": "npm run start --workspace=frontend"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm start"
   }
 }
