@@ -1,0 +1,17 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm start"
+
+[[services]]
+id = "backend"
+source = "./backend"
+buildCommand = "npm install"
+startCommand = "npm start"
+
+[[services]]
+id = "frontend"
+source = "./frontend"
+buildCommand = "npm install && npm run build"
+startCommand = "npm start"
