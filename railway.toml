@@ -1,5 +1,5 @@
 [build]
-builder = "NIXPACKS"
+builder = "dockerfile"
 
 [deploy]
 startCommand = "npm start"
@@ -7,8 +7,13 @@ startCommand = "npm start"
 [[services]]
 id = "backend"
 source = "./backend"
-buildCommand = "npm install"
-startCommand = "npm start"
+
+[services.backend]
+buildCommand = "docker build -t backend ."
+startCommand = "docker run -p $PORT:5000 -v railway_uploads:/app/uploads backend"
+
+[[volumes]]
+id = "railway_uploads"
 
 [[services]]
 id = "frontend"

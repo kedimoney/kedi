@@ -115,9 +115,21 @@ Use API endpoints to add sample data:
 
 ## Deployment
 
+### Railway Deployment
+
+1. **Connect Repository**: Link your GitHub repo to Railway
+2. **Environment Variables** (set in Railway dashboard):
+   - `JWT_SECRET`: A secure random string
+   - `DATABASE_URL`: PostgreSQL connection string (provided by Railway)
+   - `NODE_ENV`: production
+3. **Services**: Railway will auto-detect and deploy backend and frontend using Docker
+4. **Persistent Storage**: Uploads are stored in Railway volume for persistence
+
+### Alternative Deployment
+
 - **Backend**: Deploy to Render/Heroku
 - **Frontend**: Deploy to Vercel/Netlify
-- **Database**: MongoDB Atlas for production
+- **Database**: PostgreSQL for production (Railway provides this)
 
 ## Future Enhancements
 
