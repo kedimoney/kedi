@@ -1,9 +1,3 @@
-[build]
-builder = "dockerfile"
-
-[deploy]
-startCommand = "npm start"
-
 [[services]]
 id = "backend"
 source = "./backend"
