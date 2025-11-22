@@ -21,8 +21,8 @@ id = "frontend"
 source = "./frontend"
 
 [services.frontend]
-buildCommand = "docker build -t frontend ."
-startCommand = "docker run -p $PORT:3000 frontend"
+buildCommand = "npm install && npm run build"
+startCommand = "npm start"
 healthcheckPath = "/"
 restartPolicyType = "ON_FAILURE"
 
